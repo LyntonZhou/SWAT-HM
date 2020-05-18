@@ -116,7 +116,8 @@
                   kk = i_hml_no(k)     
                   
                   !kp = hmlkd(hml_ph(j), sol_cbn(ly,j)) / 1000.
-                  kp = hmlkd(hml_ph(j), sol_cbn(ly,j),ly) / 1000.
+                  !kp = hmlkd(hml_ph(j), sol_cbn(ly,j),ly) / 1000.
+                  kp = hmlkd(sol_ph(ly,j), sol_cbn(ly,j),ly) / 1000.
                   kp = (1 + sol_hmlkp(k,1)) * kp
 
                   if (kk > 0) then

@@ -5,7 +5,6 @@
 !!    name         |units            |definition
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 !!    hru_ra(:)      |MJ/m^2        |solar radiation for the day in HRU
-!!    precipday      |mm H2O        |precipitation for the day in HRU
 !!    tmn(:)         |deg C         |minimum temperature for the day in HRU
 !!    tmpav(:)       |deg C         |average temperature for the day in HRU
 !!    tmx(:)         |deg C         |maximum temperature for the day in HRU

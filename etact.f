@@ -316,7 +316,8 @@
                 hmlup = 0.
                 Wtr_b = sol_st(ly,j) + sev ! Water at time step i-1
                 Wtr_a = sol_st(ly,j)
-                kp = hmlkd(hml_ph(j), sol_cbn(ly,j), ly) / 1000.
+                !kp = hmlkd(hml_ph(j), sol_cbn(ly,j), ly) / 1000.
+                kp = hmlkd(sol_ph(ly,j), sol_cbn(ly,j), ly) / 1000.
                 Kp = (1 + sol_hmlkp(k,1)) * kp	
                 !Kp = sol_hmlkp(k,1)
                 HML_b = sol_hml_sol(k,j,ly) + sol_hml_lab(k,j,ly)	! Total of soluble and  labile species before evaporation

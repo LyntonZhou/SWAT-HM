@@ -40,24 +40,18 @@
       j = ihru
      
       !! calculate metal deposition 
-      sol_hml_lab(1,j,1) = sol_hml_lab(1,j,1) 
-     & + hml_dep_total(j) * hml_dep_frac(j)/365.
+      sol_hml_lab(1,j,1) = sol_hml_lab(1,j,1) + hml_dep_total(j) * hml_dep_frac(j)/365.
       
-      sol_hml_nlab(1,j,1) = sol_hml_nlab(1,j,1)
-     & + hml_dep_total(j) * (1-hml_dep_frac(j))/365.
+      sol_hml_nlab(1,j,1) = sol_hml_nlab(1,j,1) + hml_dep_total(j) * (1-hml_dep_frac(j))/365.
      
       !! metal from fertilizers 
-      sol_hml_lab(1,j,1) = sol_hml_lab(1,j,1)
-     & + hml_agr_total(j)* hml_agr_frac(j)/365.
+      sol_hml_lab(1,j,1) = sol_hml_lab(1,j,1) + hml_agr_total(j)* hml_agr_frac(j)/365.
       
-      sol_hml_nlab(1,j,1) = sol_hml_nlab(1,j,1)
-     & + hml_agr_total(j)* (1-hml_agr_frac(j))/365.
+      sol_hml_nlab(1,j,1) = sol_hml_nlab(1,j,1) + hml_agr_total(j)* (1-hml_agr_frac(j))/365.
       
-
       !! summary calculations
       if (curyr > nyskip) then
-        atmo_hml = atmo_hml + hml_dep_total(j)
-     & * hru_dafr(j)
+        atmo_hml = atmo_hml + hml_dep_total(j) * hru_dafr(j)
       end if
 
       return

@@ -1534,7 +1534,7 @@
       allocate (hml_sed(3,mhml,mhru))
       allocate (hml_surq(mhml,mhru))
       allocate (hml_zdb(mhml,mhru))
-      allocate (hml_ph(mhru))
+      !allocate (hml_ph(mhru))
       allocate (hml_agr_total(mhru))
       allocate (hml_agr_frac(mhru))
 

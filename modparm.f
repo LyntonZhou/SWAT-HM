@@ -963,7 +963,7 @@
 	real, dimension (:,:,:), allocatable :: hml_kg,hml_dep
 	real, dimension (:,:), allocatable :: hml_prk
 	real, dimension (:,:), allocatable :: hml_lat
-      real, dimension (:), allocatable :: hml_ph
+      !real, dimension (:), allocatable :: hml_ph
       real, dimension (:), allocatable :: hml_agr_total
       real, dimension (:), allocatable :: hml_agr_frac
 	real, dimension (:,:), allocatable :: hml_zdb, hml_surq

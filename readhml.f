@@ -58,7 +58,7 @@
       character (len=80) :: titldum
       integer :: j, eof, k, newhml, hmlnum
       real :: hmlfr, hmlrock solhml_ex, solhml_nl, hmlenr 
-      real :: hmlph, hmlagrtotal, hmlagrfrac
+      real :: hmlagrtotal, hmlagrfrac
       real :: hmldeptotal, hmldepfrac
 
       eof = 0
@@ -79,7 +79,6 @@
         solhml_ex = 0.
 	  solhml_nl = 0.
         hmlenr = 0.
-        hmlph = 0.
         hmlagrtotal = 0.
         hmlagrfrac = 0.
         hmldeptotal = 0.
@@ -95,8 +94,6 @@
         read (32,*,iostat=eof) solhml_nl
         if (eof < 0) exit
         read (32,*,iostat=eof) hmlenr
-        if (eof < 0) exit
-        read (32,*,iostat=eof) hmlph
         if (eof < 0) exit
         read (32,*,iostat=eof) hmlagrtotal
         if (eof < 0) exit
@@ -131,7 +128,6 @@
           sol_hml_lab(k,ihru,1) = solhml_ex
 	    sol_hml_nlab(k,ihru,1) = solhml_nl
           hml_enr(k,ihru) = hmlenr
-          hml_ph(ihru) = hmlph
           hml_agr_total(ihru) = hmlagrtotal/1000.
           hml_agr_frac(ihru) = hmlagrfrac
           hml_dep_total(ihru) = hmldeptotal/1000.

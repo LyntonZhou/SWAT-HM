@@ -142,12 +142,10 @@
          if (hml_plt_ly > sol_hml_sol(1,j,ly)) then
              ! if metal uptake is large than dissloved metal 
              hml_plt_ly = sol_hml_sol(1,j,ly)
-             hml_plt(j) = hml_plt(j)
-     &       - (hml_plt_ly - sol_hml_sol(1,j,ly))
+             hml_plt(j) = hml_plt(j) - (hml_plt_ly - sol_hml_sol(1,j,ly))
              sol_hml_sol(1,j,ly) = 0.      
          else 
-             sol_hml_sol(1,j,ly) = sol_hml_sol(1,j,ly)
-     &       - hml_plt_ly         
+             sol_hml_sol(1,j,ly) = sol_hml_sol(1,j,ly) - hml_plt_ly         
          
         end if     
          

@@ -81,7 +81,7 @@
                   xx2 = sub_hml(kk,iwave)
               end if
 
-              if (xx1 >= 1.e-8 .or .xx2 >= 1.e-8 ) then
+              if (xx1 >= 1.e-8 .or. xx2 >= 1.e-8) then
                   er = 0.
                   if (hml_enr(k,j) > 0.) then
                       er = hml_enr(k,j)  ! 应根据侵蚀深度调整降低er

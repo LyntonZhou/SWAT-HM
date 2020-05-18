@@ -1,4 +1,5 @@
     real function hmlkd(ph,soc,sly)
+    !! This function calcualtes Kd1 value using pH and SOC
     
     use parm
     implicit none

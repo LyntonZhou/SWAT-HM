@@ -37,7 +37,8 @@
             end if
             
             ! Adjustment aging rate by pH for Zn
-            ph = hml_ph(j)
+            !ph = hml_ph(j)
+            ph = sol_ph(ly,j)
             if (hmlname(kk) == '        Zn') then
               km = km + 4.18e-4 * (7- ph)
               kx = kx - 4.18e-4 * (7- ph)
