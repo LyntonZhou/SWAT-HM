@@ -4,7 +4,7 @@
 !!    This subroutine reads data from the HRU/subbasin heavy metal source input
 !!    file (.hml). This file contains initial amounts of heavy metals in the
 !!    mining pit/tailing pile. in the first soil layer. (Specifics about the first soil layer are given
-!!    in the .sol file.) All data in the .hml file is optional input.
+!!    in the .sol file.)
 
 !!    ~ ~ ~ INCOMING VARIABLES ~ ~ ~
 !!    name        |units         |definition

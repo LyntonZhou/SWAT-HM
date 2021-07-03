@@ -14,7 +14,7 @@
 !!    ~ ~ ~ OUTGOING VARIABLES ~ ~ ~
 !!    name        |units         |definition
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
-!!    rainmob_ef(:)    |none     |Rain moblization efficiency (0-1)
+!!    rainmob_ef(:)    |none             |Rain moblization efficiency (0-1)
 !!    sol_hmlkp(:,:)   |(mg/kg)/(kg/m3)  |Soil partition coef. between solid and aqueous phase
 !!    sol_hmlkx(:)     |per day          |Rate constant for conversion of  labile species to non-labile in soil
 !!    sol_hmlkm(:)     |per day          |Rate constant for conversion of non-labile species to  labile in soil
