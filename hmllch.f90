@@ -33,29 +33,28 @@
 !!    sol_por(:,:)  |none           |total porosity of soil layer expressed as
 !!                                  |a fraction of the total volume
 !!    sol_prk(:,:)  |mm H2O         |percolation from soil layer on current day
-!!    sol_hml_sol(:,:,:)   |kg /ha        |amount of metal stored as free ion in solution
-!!    sol_hml_lab(:,:,:)  |kg /ha        |amount of metal stored as  labile species in solid
-!!    sol_hml_nlab(:,:,:)  |kg /ha        |amount of metal stored as non-labile species in solid
-!!    frac_sol_cbn_soluble(:,:)   |Fraction of soil layer carbon that is soluble organic ligand
-!!	point_gamma(:)    |Ligand binding number for specific soluble metal 
-!!    sol_wpmm(:,:)|mm H20        |water content of soil at -1.5 MPa (wilting
-!!                                |point)
-!!    sol_z(:,:)   |mm            |depth to bottom of soil layer
-!!    surfq(:)     |mm H2O        |surface runoff generated on day in HRU
+!!    sol_hml_sol(:,:,:)  |kg /ha   |amount of metal stored as free ion in solution
+!!    sol_hml_lab(:,:,:)  |kg /ha   |amount of metal stored as  labile species in solid
+!!    sol_hml_nlab(:,:,:) |kg /ha   |amount of metal stored as non-labile species in solid
+!!    frac_sol_cbn_soluble(:,:)     |Fraction of soil layer carbon that is soluble organic ligand
+!! 	  point_gamma(:)                |Ligand binding number for specific soluble metal 
+!!    sol_wpmm(:,:)|mm H20          |water content of soil at -1.5 MPa (wilting point)
+!!    sol_z(:,:)   |mm              |depth to bottom of soil layer
+!!    surfq(:)     |mm H2O          |surface runoff generated on day in HRU
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 !!    ~ ~ ~ OUTGOING VARIABLES ~ ~ ~
 !!    name         |units         |definition
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
-!!    hml_lat(:,:) |kg pst/ha     |amount of h. metal in lateral flow in HRU
-!!                                |for the day
-!!    hml_surq(:,:)|kg/ha         |amount of h. metal type lost in surface
-!!                                |runoff on current day in HRU
+!!    hml_lat(:,:) |kg pst/ha      |amount of h. metal in lateral flow in HRU
+!!                                 |for the day
+!!    hml_surq(:,:)|kg/ha          |amount of h. metal type lost in surface
+!!                                 |runoff on current day in HRU
 !!    hml_prk(:,:)  |kg/ha         |amount of h. metal type leached from soil
-!!                                |profile on current day
-!!    sol_hml_sol(:,:,:)   |kg /ha        |amount of metal stored as free ion in solution
-!!    sol_hml_lab(:,:,:)  |kg /ha        |amount of metal stored as  labile species in solid
-!!    sol_hml_nlab(:,:,:)  |kg /ha        |amount of metal stored as non-labile species in solid
+!!                                 |profile on current day
+!!    sol_hml_sol(:,:,:)  |kg /ha  |amount of metal stored as free ion in solution
+!!    sol_hml_lab(:,:,:)  |kg /ha  |amount of metal stored as  labile species in solid
+!!    sol_hml_nlab(:,:,:) |kg /ha  |amount of metal stored as non-labile species in solid
 !!    hml_zdb(:,:)     |
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
