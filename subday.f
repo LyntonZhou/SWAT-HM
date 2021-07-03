@@ -99,11 +99,12 @@
       pdvab(24) = sub_hml_sol(1,sb,2)
       pdvab(25) = sub_hml_sol(1,sb,3)
       pdvab(26) = sub_hml_sol(1,sb,4)
-      pdvab(27) = sub_hml_exch(1,sb)
-      pdvab(28) = sub_hml_nlab(1,sb)
-      pdvab(29) = sub_hml_dep(1,sb)
-      pdvab(30) = sub_hml_weth(1,sb)
-      pdvab(31) = sub_hml_agr(1,sb)
+      pdvab(27) = sub_hml_gw(1,sb)
+      pdvab(28) = sub_hml_exch(1,sb)
+      pdvab(29) = sub_hml_nlab(1,sb)
+      pdvab(30) = sub_hml_dep(1,sb)
+      pdvab(31) = sub_hml_weth(1,sb)
+      pdvab(32) = sub_hml_agr(1,sb)
 
       if (ipdvab(1) > 0) then
         do ii = 1, itotb
@@ -138,7 +139,8 @@
      &    (sub_hml_sol(k,sb,1),k=1, n_hml_mx),
      &    (sub_hml_sol(k,sb,2),k=1, n_hml_mx),
      &    (sub_hml_sol(k,sb,3),k=1, n_hml_mx), 
-     &    (sub_hml_sol(k,sb,4),k=1, n_hml_mx),     
+     &    (sub_hml_sol(k,sb,4),k=1, n_hml_mx), 
+     &    (sub_hml_gw(k,sb),k=1, n_hml_mx), 
      &    (sub_hml_exch(k,sb),k=1, n_hml_mx),
      &    (sub_hml_nlab(k,sb),k=1, n_hml_mx),
      &    (sub_hml_dep(k,sb),k=1, n_hml_mx),
@@ -154,8 +156,8 @@
 !     changed for jennifer b.
 !1000 format ('BIGSUB',i4,1x,i8,1x,i4,e10.5,18f10.3)
 !1000 format ('BIGSUB',i4,1x,i8,1x,i4,e10.5,21f10.3)
- 1000 format('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18e10.3,e10.3,8e10.3,i6)
+ 1000 format('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18e10.3,14e10.3,i6)
  1001 format('BIGSUB',i4,1x,i8,1x,i2,1x,i2,1x,i4,1x,e10.5,18e10.3,1x,   
      &  e10.5, 7e10.3,i6)
-1002  format (i4,1x,i8,1x,i4,2x,e10.5,20(e10.3,1x))
+ 1002 format (i4,1x,i7,1x,i5,1x,e12.4,20e13.4)
       end 

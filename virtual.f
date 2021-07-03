@@ -373,22 +373,25 @@
             sub_hml_sol(k,sb,4) = sub_hml_sol(k,sb,4) +
      &      hruhmld(k,4,j)            
             ! ligand hml leached from soil profile
-            sub_hml_lig(k,sb) = 0.       
+            sub_hml_lig(k,sb) = 0.
+           ! Hml in groundwater
+            sub_hml_gw(k,sb) = sub_hml_gw(k,sb) + 
+     &      hruhmld(k,5,j)
             ! Hml in surface sediment flow, as  labile species
             sub_hml_exch(k,sb) = sub_hml_exch(k,sb) +
-     &      hruhmld(k,5,j)
+     &      hruhmld(k,6,j)
             ! Hml in surface sediment flow, as non-labile species
             sub_hml_nlab(k,sb) = sub_hml_nlab(k,sb) +
-     &      hruhmld(k,6,j)
+     &      hruhmld(k,7,j)
             ! Hml from atmosphere to the soil profile
             sub_hml_dep(k,sb) = sub_hml_dep(k,sb) +
-     &      hruhmld(k,7,j)
+     &      hruhmld(k,8,j)
             ! Hml from rock weathering to the soil profile
             sub_hml_weth(k,sb) = sub_hml_weth(k,sb) +
-     &      hruhmld(k,8,j)
-            ! Hml from and animal manure to the soil profile
+     &      hruhmld(k,9,j)
+            ! Hml from fertilizer and manure to the soil profile
             sub_hml_agr(k,sb) = sub_hml_agr(k,sb) +
-     &      hruhmld(k,9,j)       
+     &      hruhmld(k,10,j)
           end do
        end if
 
@@ -604,8 +607,8 @@
 	   if (n_hml_mx > 0) then	   
            do k = 1, n_hml_mx
              !hmlroute(1,k,ihout) = sub_hml_sol(k,sb)
-             hmlroute(1,k,ihout) = sub_hml_sol(k,sb,1)+
-     &       sub_hml_sol(k,sb,2)
+             hmlroute(1,k,ihout) = sub_hml_sol(k,sb,1) + 
+     &       sub_hml_sol(k,sb,2) + sub_hml_gw(k,sb)
 		   !hmlroute(2,k,ihout) = sub_hml_lig(k,sb)
              hmlroute(2,k,ihout) = 0
 		   hmlroute(3,k,ihout) = sub_hml_exch(k,sb)
@@ -734,11 +737,12 @@
          submono(20,sb) = submono(20,sb) + sub_hml_sol(1,sb,2)
          submono(21,sb) = submono(21,sb) + sub_hml_sol(1,sb,3)
          submono(22,sb) = submono(22,sb) + sub_hml_sol(1,sb,4)
-         submono(23,sb) = submono(23,sb) + sub_hml_exch(1,sb)
-         submono(24,sb) = submono(24,sb) + sub_hml_nlab(1,sb)
-         submono(25,sb) = submono(25,sb) + sub_hml_dep(1,sb)
-         submono(26,sb) = submono(26,sb) + sub_hml_weth(1,sb)
-         submono(27,sb) = submono(27,sb) + sub_hml_agr(1,sb)
+         submono(23,sb) = submono(23,sb) + sub_hml_gw(1,sb)
+         submono(24,sb) = submono(24,sb) + sub_hml_exch(1,sb)
+         submono(25,sb) = submono(25,sb) + sub_hml_nlab(1,sb)
+         submono(26,sb) = submono(26,sb) + sub_hml_dep(1,sb)
+         submono(27,sb) = submono(27,sb) + sub_hml_weth(1,sb)
+         submono(28,sb) = submono(28,sb) + sub_hml_agr(1,sb)
          
           if (iprint == 1) call subday
         end if

@@ -23,7 +23,7 @@
     do ly = 1, sol_nly(j)
         do k_i = 1, n_hml_mx
             
-            k = n_hml_no(k_i)	 ! ID No. of metal in db 
+            k = n_hml_no(k_i)  ! ID No. of metal in db 
             kk = i_hml_no(k)   ! Sequence No. of input metal, in fact this sequence number is useles
             kx = sol_hmlkx(k)
             km = sol_hmlkm(k)
@@ -37,7 +37,6 @@
             end if
             
             ! Adjustment aging rate by pH for Zn
-            !ph = hml_ph(j)
             ph = sol_ph(ly,j)
             if (hmlname(kk) == '        Zn') then
               km = km + 4.18e-4 * (7- ph)
@@ -56,17 +55,13 @@
             kx = kx * Tadj
             km = km * Tadj
             
-            
             exchtonlab = sol_hml_lab(k,j,ly) * kx
             nlabtoexch = sol_hml_nlab(k,j,ly) * km
             
             !! debug by Zhou
-            if (abs(nlabtoexch - exchtonlab) > 10 ) then
+            if (abs(nlabtoexch - exchtonlab) > 10) then
                 zlf = 0
             end if
-            
-            !sol_hml_nlab(k,j,ly) = sol_hml_nlab(k,j,ly) - nlabtoexch
-            !sol_hml_lab(k,j,ly) = sol_hml_lab(k,j,ly) + nlabtoexch
             
             sol_hml_nlab(k,j,ly) = sol_hml_nlab(k,j,ly) - nlabtoexch + exchtonlab
             sol_hml_lab(k,j,ly) = sol_hml_lab(k,j,ly) + nlabtoexch - exchtonlab

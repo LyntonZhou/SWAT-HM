@@ -108,18 +108,17 @@
      &    submono(24,sb),
      &    submono(25,sb),
      &    submono(26,sb), 
-     &    submono(27,sb),     
+     &    submono(27,sb),   
+     &    submono(28,sb), 
      &    submono(19,sb)+submono(20,sb)+submono(21,sb)+
-     &    submono(22,sb)+submono(23,sb)+submono(24,sb),
-     &    submono(25,sb)+submono(26,sb)+submono(27,sb)      
+     &    submono(22,sb)+submono(23,sb)+submono(24,sb)++submono(25,sb),
+     &    submono(26,sb)+submono(27,sb)+submono(28,sb)      
       
       end do
       
-
-
       return
 !1000 format ('BIGSUB',i4,1x,i8,1x,i4,e10.5,21f10.3)
 !1000 format ('BIGSUB',i4,1x,i8,1x,i4,e10.5,18f10.3,1x,e10.5,8e10.3,i6)
- 1000 format ('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18f10.3,e10.3,8e10.3,i6)
- 1002 format (i4,1x,i8,1x,i4,2x,e10.5,20(e10.3,1x))
+ 1000 format ('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18f10.3,14e10.3,i6)
+ 1002 format (i4,1x,i7,1x,i5,1x,e12.4,20e13.4)
       end 

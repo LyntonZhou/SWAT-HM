@@ -22,7 +22,7 @@
 !!    sol_bd(:,:)   |Mg/m**3        |bulk density of the soil
 !!    sol_cbn(:,:)  |%              |percent organic carbon in soil layer
 !!    sol_nly(:)    |none           |number of soil layers 
-!!    sol_hml_lab(:,:,:)  |mg/kg   |amount of metal stored as  labile species in solid
+!!    sol_hml_lab(:,:,:)   |mg/kg   |amount of metal stored as  labile species in solid
 !!    sol_hml_nlab(:,:,:)  |mg/kg   |amount of metal stored as non-labile species in solid
 
 !!    ~ ~ ~ OUTGOING VARIABLES ~ ~ ~
@@ -30,7 +30,7 @@
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 !!    sol_hml_sol(:,:,:)   |kg /ha        |amount of metal stored as free ion in solution
 !!    sol_hml_lig(:,:,:)   |kg /ha        |amount of metal stored as ligand-fixed species in solution
-!!    sol_hml_lab(:,:,:)  |kg /ha        |amount of metal stored as  labile species in solid
+!!    sol_hml_lab(:,:,:)   |kg /ha        |amount of metal stored as  labile species in solid
 !!    sol_hml_nlab(:,:,:)  |kg /ha        |amount of metal stored as non-labile species in solid
 
 
@@ -75,10 +75,10 @@
           do j = 1, nly
               if (sol_hml_lab(i_hml, i, j) <= 0.) then
                   zdst = 0.
-                  !zdst = Exp(-sol_z(j,i) / 1000.)
+                  zdst = Exp(-sol_z(j,i) / 1000.)
                   !zdst = Exp(-sol_z(j,i) / 333.)
                   !zdst = Exp(-sol_z(j,i) / 300.)
-                  zdst = Exp(-sol_z(j,i) / 250.)
+                  !zdst = Exp(-sol_z(j,i) / 250.)
                   !zdst = Exp(-sol_z(j,i) / 200.)
                   sol_hml_lab(i_hml, i, j) 
      &            = zdst * sol_hml_lab(i_hml, i, 1)
@@ -87,16 +87,8 @@
               end if
           end do
       end do
-      ! sol_hml_lab(i_hml, i, j) = 10. * zdst * .7
-      ! Estimate  labile species in other layers using NO3 estimation equation. NOT foundation for this surrogate.
-      ! No estimation for non-labile species.
 
-      !sol_hml_lab(i_hml,i,j) = sol_hml_lab (i_hml, i,j) * wt1   !! mg/kg => kg/ha
-      !sol_hml_nlab(i_hml,i,j) = sol_hml_nlab (i_hml, i,j) * wt1   !! mg/kg => kg/ha
-      !sumhml_exch = sumhml_exch + sol_hml_lab(i_hml, i, j)
-      !sumhml_nlab = sumhml_nlab + sol_hml_nlab(i_hml, i, j)
-      !20150509 converting mg/kg (ppm) to kg/ha is wrong primary version
-
+      ! converting mg/kg (ppm) to kg/ha
       dg = 0.
       do i_hml=1, mhml
           do j = 1, nly
@@ -104,7 +96,7 @@
                   dg = sol_z(j,i)
               else
                   dg = sol_z(j,i) - sol_z(j-1,i)
-              endif
+              end if
               wt1 = 0.
               wt1 = sol_bd(j,i) * dg / 100.
 

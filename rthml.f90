@@ -112,7 +112,7 @@
     ! sd2 = 500*10**-6. ! set to 100um
 
     !! added by Zhou for debug
-    if (jrch == 48) then
+    if (jrch == 1) then
         zlf = 0.
     end if
     ! initialize depth of water for h.metal calculations
@@ -132,7 +132,7 @@
     bedvol = ch_w(2,jrch) * ch_l2(jrch) * 1000. * sedhml_act(jrch)
     ! calculate mass of active river bed sediment layer
     bedmass = 0.
-    bedmass = bedvol * sol_pd / 1000 * (1-sed_por)
+    bedmass = bedvol * sol_pd / 1000 * (1-sed_por) ! tons
 
     ! calculate volume of water entering reach
     wtrin = 0.
@@ -143,8 +143,13 @@
         ! Fundamental parameters for specific metal
         kp1 = sol_hmlkp(k,2)
         kp2 = sol_hmlkp(k,3)
+        
         ! Incoming metal
         rch_hml_sol_in = hmlroute(1,k,inum2) * (1. -rnum1)
+        ! added by Zhou for debug
+        if (rch_hml_sol_in > 0.) then
+           zlf = 0.
+        end if
         rch_hml_exch_in = hmlroute(3,k,inum2) * (1. -rnum1)
         rch_hml_nlab_in = hmlroute(4,k,inum2) * (1. -rnum1)
 
@@ -169,7 +174,7 @@
         sed_hml_exch(k) = sedhml_conc(3,k,jrch) * bedvol *(1-sed_por)
         sed_hml_nlab(k) = sedhml_conc(4,k,jrch) * bedvol *(1-sed_por)
 
-        if (rch_hml_sol(k) + rch_hml_exch(k) + rch_hml_nlab(k) < 1.e-10 ) then
+        if (rch_hml_sol(k) + rch_hml_exch(k) + rch_hml_nlab(k) < 1.e-10) then
             chhml_conc(:,k,jrch) = 0.
         end if
         if (sed_hml_sol(k) + sed_hml_exch(k) + sed_hml_nlab(k) < 1.e-10) then
@@ -323,7 +328,7 @@
 
         else	! If no flow into the reach
             sedcon = 0.
-            x1 = 0.
+            x1 = 1.
             x2 = 0.
 
             call hml2EQspecies_sed(y1,y2,kp2,sed_por,sol_pd)
@@ -349,18 +354,18 @@
             !chhml_conc(1,k,jrch) = rch_hml_sol(k) / wtr_involved ! kg/m3
             !chhml_conc(3,k,jrch) = rch_hml_exch(k) / wtr_involved
             !chhml_conc(4,k,jrch) = rch_hml_nlab(k) / wtr_involved
-            chhml_conc(1,k,jrch) = rch_hml_sol(k) / (rchwtr + wtrin)! kg/m3
+            chhml_conc(1,k,jrch) = rch_hml_sol(k) / (rchwtr + wtrin) ! kg/m3
             chhml_conc(3,k,jrch) = rch_hml_exch(k) / (rchwtr + wtrin)
             chhml_conc(4,k,jrch) = rch_hml_nlab(k) / (rchwtr + wtrin)
         else
-            sed_hml_sol(k)=sed_hml_sol(k)+rch_hml_sol(k)
-            sed_hml_exch(k)=sed_hml_exch(k)+rch_hml_exch(k)
-            sed_hml_nlab(k)=sed_hml_nlab(k)+rch_hml_nlab(k)
+            sed_hml_sol(k) = sed_hml_sol(k) + rch_hml_sol(k)
+            sed_hml_exch(k) = sed_hml_exch(k) + rch_hml_exch(k)
+            sed_hml_nlab(k) = sed_hml_nlab(k) + rch_hml_nlab(k)
         end if
         !modified by Zhou 20160105
-        sedhml_conc(1,k,jrch) = sed_hml_sol(k) /(bedvol * sed_por)	! kg/m3
-        sedhml_conc(3,k,jrch) = sed_hml_exch(k) /(bedvol *(1-sed_por))
-        sedhml_conc(4,k,jrch) = sed_hml_nlab(k) /(bedvol *(1-sed_por))
+        sedhml_conc(1,k,jrch) = sed_hml_sol(k)/(bedvol * sed_por) ! kg/m3
+        sedhml_conc(3,k,jrch) = sed_hml_exch(k)/(bedvol *(1-sed_por))
+        sedhml_conc(4,k,jrch) = sed_hml_nlab(k)/(bedvol *(1-sed_por))
         
         if (sedhml_conc(3,k,jrch) > 1.e10) then
             zlf = 0.
@@ -374,7 +379,7 @@
             hml_exch_o(k) = chhml_conc(3,k,jrch)
             hml_nlab_o(k) = chhml_conc(4,k,jrch)
 
-            if (hml_sol_o(k) + hml_exch_o(k) + hml_nlab_o(k) < 0. ) then
+            if (hml_sol_o(k) + hml_exch_o(k) + hml_nlab_o(k) < 0.) then
                 hml_sol_o(k) = 0.
             end if
 

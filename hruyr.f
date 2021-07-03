@@ -300,13 +300,35 @@
      &      hruyro(72,j)/Real(366 - leapyr),           
      &      hruyro(73,j)/Real(366 - leapyr),           
      &      hruyro(74,j)/Real(366 - leapyr),          
-     &      hruyro(75,j)/Real(366 - leapyr)
+     &      hruyro(75,j)/Real(366 - leapyr),
+     &      hruyro(76,j),   
+     &      hruyro(77,j),
+     &      hruyro(78,j),
+     &      hruyro(79,j),
+     &      hruyro(80,j),
+     &      hruyro(81,j),
+     &      hruyro(82,j),
+     &      hruyro(83,j),
+     &      hruyro(84,j),
+     &      hruyro(85,j)     
+          
       else if (hml_eqn == 1) then
           write (303,1004) cropname, j, subnum(j),                 
      &      hruno(j), sb, nmgt(j), iyr, hru_km(j),       
      &      hruyro(72,j)/Real(366 - leapyr),                     
      &      hruyro(74,j)/Real(366 - leapyr),          
-     &      hruyro(75,j)/Real(366 - leapyr)
+     &      hruyro(75,j)/Real(366 - leapyr),
+     &      hruyro(76,j),   
+     &      hruyro(77,j),
+     &      hruyro(78,j),
+     &      hruyro(79,j),
+     &      hruyro(80,j),
+     &      hruyro(81,j),
+     &      hruyro(82,j),
+     &      hruyro(83,j),
+     &      hruyro(84,j),
+     &      hruyro(85,j)
+          
       end if
         
         end if
@@ -322,10 +344,10 @@
 !     *e10.5,1x,e10.5,3e10.3,2f10.3,1x,i4)
 
  1000 format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
-     & e10.5,1x,e10.5,8e10.3,5f10.3)
+     & e10.5,1x,e10.5,8e10.3,8f10.3)
  2000 format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
      & e10.5,1x,e10.5,5e10.3,5f10.3,1x,i4)
  1001 format (a4,i7,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
      & e10.5,1x,e10.5,3e10.3,5f10.3,1x,i4)   
- 1004  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,1x,e10.5,20f10.3)      
+ 1004 format (a4,i5,1x,a9,1x,a5,i5,1x,i4,1x,i4,1x,e10.5,20f13.4)      
       end

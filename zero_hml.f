@@ -144,9 +144,13 @@
       sub_hml_dep = 0.
       sub_hml_weth = 0.
       sub_hml_agr = 0.
+      sub_hml_gw = 0.
+      
+      gw_sol_hml = 0.
+      hml_gw = 0.
 
-	hml_fr= 0.
-	hml_rock=0.    !20150509
+	hml_fr = 0.
+	hml_rock = 0.    !20150509
 	
 	point_gamma= 1.0
 	frac_sol_cbn_soluble = 0.1

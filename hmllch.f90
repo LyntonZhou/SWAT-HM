@@ -115,8 +115,6 @@
                   !! Sequence No. of input metal, in fact this sequence number is useless
                   kk = i_hml_no(k)     
                   
-                  !kp = hmlkd(hml_ph(j), sol_cbn(ly,j)) / 1000.
-                  !kp = hmlkd(hml_ph(j), sol_cbn(ly,j),ly) / 1000.
                   kp = hmlkd(sol_ph(ly,j), sol_cbn(ly,j),ly) / 1000.
                   kp = (1 + sol_hmlkp(k,1)) * kp
 
@@ -153,7 +151,7 @@
                           vf = sol_prk(ly,j) + flat(ly,j)
                       endif
 
-                      sol_in_soil=sol_hml_sol(k,j,ly:ly+1) ! Transport soluble metal
+                      sol_in_soil = sol_hml_sol(k,j,ly:ly+1) ! Transport soluble metal
 
                       if (sol_in_soil(1) >= 0. .and. vf > 0.) then
                           if (ly == sol_nly(j)) then

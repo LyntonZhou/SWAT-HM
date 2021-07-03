@@ -125,10 +125,10 @@
       !! MJW added rev 490
 	!!CaCo3 content (%) 
 	if (eof < 0) exit	
-	  read (107,5000,iostat=eof) (sol_cal(j,ihru), j = 1, nly) 	
+	  read (107,5000,iostat=eof) (sol_ph(j,ihru), j = 1, nly) 	
 	!! PH-H20  
 	if (eof < 0) exit
-	  read (107,5000,iostat=eof) (sol_ph(j,ihru), j = 1, nly) 
+	  read (107,5000,iostat=eof) (sol_cal(j,ihru), j = 1, nly) 
       
       if (eof < 0) exit
       exit

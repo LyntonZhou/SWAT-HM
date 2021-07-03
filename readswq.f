@@ -208,7 +208,7 @@
       ! added by Zhou 20150107
       if (chhml_stl(1,irch) <= 1.e-6) chhml_stl(1,irch) = 1.
       if (chhml_rsp(1,irch) <= 1.e-6) chhml_rsp(1,irch) = 0.002
-      if (chhml_mix(1,irch) <= 1.e-6) chhml_mix(1,irch) = 0.001
+      if (chhml_mix(1,irch) <= 1.e-6) chhml_mix(1,irch) = 0.0001
       if (sedhml_bry(1,irch) <= 1.e-6) sedhml_bry(1,irch) = 0.000002
       if (sedhml_conc(3,1,irch) <= 1.e-6) sedhml_conc(3,1,irch) = 0.
       if (sedhml_conc(4,1,irch) <= 1.e-6) sedhml_conc(4,1,irch) = 0.

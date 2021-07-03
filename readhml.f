@@ -29,9 +29,10 @@
 !!    n_hml_no(:)   |none          |array of unique heavy metals used in watershed
 !!    n_hml_mx      |none          |number of different metals used in the simulation
 !!    sol_hml(:,:,1)|mg/kg         |metal concentration in soil
-!!    sol_hml_lab(:,:,1)  |mg/kg  |Concentration of metal stored as  labile species in solid in 1st soil layer
-!!    sol_hml_nlab(:,:,1)  |mg/kg  |Concentration of metal stored as non-labile species in solid in 1st soil layer
-!!    hml_enr(:,:)  |none          |Heavy metal enrichment ratio
+!!    sol_hml_lab(:,:,1)  |mg/kg   |concentration of metal stored as  labile species in solid in 1st soil layer
+!!    sol_hml_nlab(:,:,1) |mg/kg   |concentration of metal stored as non-labile species in solid in 1st soil layer
+!!    hml_enr(:,:)  |none          |heavy metal enrichment ratio
+!!    gw_sol_hml(:) |ug/L          |soluble metal concentration in groundwater loading to reach
 !!    ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 !!    ~ ~ ~ LOCAL DEFINITIONS ~ ~ ~
@@ -60,6 +61,7 @@
       real :: hmlfr, hmlrock solhml_ex, solhml_nl, hmlenr 
       real :: hmlagrtotal, hmlagrfrac
       real :: hmldeptotal, hmldepfrac
+      real :: gwsolhml
 
       eof = 0
       
@@ -68,10 +70,7 @@
         if (eof < 0) exit
         read (32,5000,iostat=eof) titldum
         if (eof < 0) exit
-        !read (32,5000,iostat=eof) titldum
-        !if (eof < 0) exit
-        !read (32,5000,iostat=eof) titldum
-        !if (eof < 0) exit
+
         do j = 1, mhml
         hmlnum = 0
 	  hmlfr  = 0.
@@ -83,6 +82,7 @@
         hmlagrfrac = 0.
         hmldeptotal = 0.
         hmldepfrac = 0.
+        gwsolhml = 0.
         read (32,*,iostat=eof) hmlnum
         if (eof < 0) exit
         read (32,*,iostat=eof) hmlfr
@@ -102,6 +102,8 @@
         read (32,*,iostat=eof) hmldeptotal
         if (eof < 0) exit
         read (32,*,iostat=eof) hmldepfrac
+        if (eof < 0) exit
+        read (32,*,iostat=eof) gwsolhml
         if (eof < 0) exit
         
         if (hmlnum > 0) then
@@ -132,6 +134,7 @@
           hml_agr_frac(ihru) = hmlagrfrac
           hml_dep_total(ihru) = hmldeptotal/1000.
           hml_dep_frac(ihru) = hmldepfrac
+          gw_sol_hml(ihru) = gwsolhml
         end if
 
       if (eof < 0) exit

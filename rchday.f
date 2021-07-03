@@ -321,5 +321,5 @@
  5002 format ('REACH ',i4,1x,i8,2x,i2,1x,i2,1x,i4,1x,47e12.4)
  6000 format ('REACH ',i4,1x,i8,1x,i5,47e12.4,1x,i4)
  6002 format ('REACH ',i4,1x,i8,1x,i2,1x,i2,1x,i4,1x,47e12.4,1x,i4)
- 5003 format (i4,1x,i8,1x,i5,1x,100e12.4)
+ 5003 format (i4,1x,i7,1x,i5,1x,e12.4,100e15.5)
       end

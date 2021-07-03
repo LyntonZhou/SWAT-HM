@@ -334,13 +334,35 @@
      &      hrumono(72,j)/Real(days),           
      &      hrumono(73,j)/Real(days),           
      &      hrumono(74,j)/Real(days),          
-     &      hrumono(75,j)/Real(days)
+     &      hrumono(75,j)/Real(days),
+     &      hrumono(76,j), 
+     &      hrumono(77,j),
+     &      hrumono(78,j),
+     &      hrumono(79,j),
+     &      hrumono(80,j),
+     &      hrumono(81,j),
+     &      hrumono(82,j),
+     &      hrumono(83,j),
+     &      hrumono(84,j),
+     &      hrumono(85,j)
+          
       else if (hml_eqn == 1) then
           write (303,1004) cropname, j, subnum(j),                 
      &      hruno(j), sb, nmgt(j), mo_chk, hru_km(j),       
      &      hrumono(72,j)/Real(days),                     
      &      hrumono(74,j)/Real(days),          
-     &      hrumono(75,j)/Real(days)
+     &      hrumono(75,j)/Real(days),
+     &      hrumono(76,j), 
+     &      hrumono(77,j),
+     &      hrumono(78,j),
+     &      hrumono(79,j),
+     &      hrumono(80,j),
+     &      hrumono(81,j),
+     &      hrumono(82,j),
+     &      hrumono(83,j),
+     &      hrumono(84,j),
+     &      hrumono(85,j)     
+          
       end if
 
         end if
@@ -348,10 +370,10 @@
 
       return
  1000 format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
-     & e10.5,1x,e10.5,8e10.3,2f10.3)
+     & e10.5,1x,e10.5,8e10.3,8f10.3)
  2000 format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
      & e10.5,1x,e10.5,5e10.3,5f10.3,1x,i4)
  1001 format (a4,i7,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,
      & e10.5,1x,e10.5,3e10.3,2f10.3,1x,i4)
- 1004  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,1x,e10.5,20f10.3)     
+ 1004 format (a4,i5,1x,a9,1x,a5,i5,1x,i4,1x,i4,1x,e10.5,20e13.4)     
       end

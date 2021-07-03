@@ -121,7 +121,16 @@
             write (7,1041) (hedr(j), j = 1, mrcho)          !! subdaily output
  	  endif
       endif 
+      
+!! write headings to outhml.rch Zhou 20210408
+      write (307,1070) (hedr_rch_hml(j), j = 1, 13)
+      
+!! write headings to outhml.sub Zhou 20210408
+      write (306,1080) (hedr_sub_hml(j), j = 1, 12)
 
+!! write headings to outhml.hru Zhou 20210408
+      write (303,1090) (hedr_hru_hml(j), j = 1, 13)      
+      
 !! write headings to reach output file (output2.rch)
       if (isproj == 1) then
         write (20,1000)prog, values(2), values(3), values(1), values(5), 
@@ -203,15 +212,19 @@
  1000 format ('1',/t5,a80,t105,2(i2,'/'),i4,5x,2(i2,':'),i2)
  1010 format (/(t5,20a4))
  1020 format (//'LULC  HRU       GIS  SUB  MGT  MON','   AREAkm2',      
-     & 78(a10))
+     & 84(a10))
  !    * 76(a10),"    GISnum")
  1021  format (//'LULC  HRU       GIS  SUB  MGT MO DA   YR',            
-     &'   AREAkm2', 78(a10))	   
- 1030 format (//6x,' SUB      GIS  MON    AREAkm2',27(a10))
+     &'   AREAkm2', 84(a10))	   
+ 1030 format (//6x,' SUB      GIS  MON    AREAkm2',40(a10))
  1040 format (//7x,'RCH      GIS   MON      AREAkm2',56a12)
  1041 format (//7x,'RCH      GIS   DAY   DET     AREAkm2',45a12)    
  1050 format (//6x,'     RES  MON',41a12)
  1060 format (//6x,'RCH GIS  MON',26a12)
+ 1070 format (' RCH    YEAR   MON      AREAkm2',13a15)
+ 1080 format (' SUB    YEAR   MON      AREAkm2',12a13)
+ 1090 format ('CROP  HRU   SUBNAME HRUNO  SUB  MGE  DAY
+     &    AREAkm2',13a13)
  2000 format (a12,12x,i4,4x,i4)
  3000 format ("Pesticide loadings to main channel by HRU",/)
  3001 format ("Pesticide #",250(18x,i3,1x))

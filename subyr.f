@@ -107,14 +107,15 @@
      &    subyro(25,sb), 
      &    subyro(26,sb), 
      &    subyro(27,sb),     
+     &    subyro(28,sb), 
      &    subyro(19,sb)+subyro(20,sb)+subyro(21,sb)+
-     &    subyro(22,sb)+subyro(23,sb)+subyro(24,sb),
-     &    subyro(25,sb)+subyro(26,sb)+subyro(27,sb)       
+     &    subyro(22,sb)+subyro(23,sb)+subyro(24,sb)+subyro(25,sb),
+     &    subyro(26,sb)+subyro(27,sb)+subyro(28,sb)       
         
       end do
 
       return
 !1000 format ('BIGSUB',i4,1x,i8,1x,i4,e10.5,21f10.3)
- 1000 format ('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18f10.3,e10.3,8e10.3,i6)
- 1002 format (i4,1x,i8,1x,i4,2x,e10.5,20(e10.3,1x))    
+ 1000 format ('BIGSUB',i4,1x,i8,1x,i4,1x,e10.5,18f10.3,14e10.3,i6)
+ 1002 format (i4,1x,i7,1x,i5,1x,e12.4,20e13.4)    
       end 

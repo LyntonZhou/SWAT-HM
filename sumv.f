@@ -539,11 +539,22 @@
         hrumono(70,j) = hrumono(70,j) + gw_qdeep(j)
         hrumono(71,j) = hrumono(71,j) + latq(j) - lpndloss - lwetloss
         
-        !! added by Zhou 20180116
+        !! added by Zhou 20180116 20200918
         hrumono(72,j) = hrumono(72,j) + sol_hml_sol(1,j,1)
         hrumono(73,j) = hrumono(73,j) + sol_hml_lig(1,j,1)
         hrumono(74,j) = hrumono(74,j) + sol_hml_lab(1,j,1)
         hrumono(75,j) = hrumono(75,j) + sol_hml_nlab(1,j,1)
+        hrumono(76,j) = hrumono(76,j) + hruhmld(1,1,j)
+        hrumono(77,j) = hrumono(77,j) + hruhmld(1,2,j)
+        hrumono(78,j) = hrumono(78,j) + hruhmld(1,3,j)
+        hrumono(79,j) = hrumono(79,j) + hruhmld(1,4,j)
+        hrumono(80,j) = hrumono(80,j) + hruhmld(1,5,j)
+        hrumono(81,j) = hrumono(81,j) + hruhmld(1,6,j)
+        hrumono(82,j) = hrumono(82,j) + hruhmld(1,7,j)
+        hrumono(83,j) = hrumono(83,j) + hruhmld(1,8,j)
+        hrumono(84,j) = hrumono(84,j) + hruhmld(1,9,j)
+        hrumono(85,j) = hrumono(85,j) + hruhmld(1,10,j)
+        
         
         wtrmon(1,j) = wtrmon(1,j) + pndev / cnv
         wtrmon(2,j) = wtrmon(2,j) + pndsep / cnv
@@ -674,14 +685,16 @@
             hruhmld(k,3,j) = hml_prk(k,j) * 1. * hru_ha(j)
             ! Hml uptake by plant 	
             hruhmld(k,4,j) = hml_plt(j) * 1. * hru_ha(j)
+            ! Hml in groundwater flow 
+            hruhmld(k,5,j) = hml_gw(j) * 1. * hru_ha(j)
 		  ! Hml in surface sediment flow, as  labile & non-labile, respectively
-		  hruhmld(k,5:6,j) = hml_sed(1:2,k,j)* 1. * hru_ha(j)
+		  hruhmld(k,6:7,j) = hml_sed(1:2,k,j)* 1. * hru_ha(j)
             ! Hml Hml from atmosphere to the soil profile 
-		  hruhmld(k,7,j) = hml_dep_total(j)/365. * 1. * hru_ha(j)
+		  hruhmld(k,8,j) = hml_dep_total(j)/365. * 1. * hru_ha(j)
             ! Hml from rock wethering to the soil profile
-		  hruhmld(k,8,j) = weth_amt(j) * 1. * hru_ha(j)
-            ! Hml from fertilizer and animal manure to the soil profile
-		  hruhmld(k,9,j) = hml_agr_total(j)/365. * 1. * hru_ha(j)
+		  hruhmld(k,9,j) = weth_amt(j) * 1. * hru_ha(j)
+            ! Hml from fertilizer and manure to the soil profile
+		  hruhmld(k,10,j) = hml_agr_total(j)/365. * 1. * hru_ha(j)
 
             !! watershed summary, this summary is for printout, not for route data input
             whmldayo(k,1) = whmldayo(k,1) + hml_surq(k,j) * hru_dafr(j)

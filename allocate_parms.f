@@ -62,7 +62,7 @@
       mrcho = 62
 !     msubo = 18
 !     changed for Zhou
-      msubo = 31
+      msubo = 32
       mstdo = 113
       motot = 600             !! (50 years limit)
       
@@ -295,7 +295,9 @@
       allocate (sedst(mch))
       allocate (vel_chan(mch))
       allocate (wurch(12,mxsubch)) 
-      
+
+! Allocate variables for heavy metals in groundwater
+	allocate (gw_sol_hml(mhru))      
 ! Allocate variables for heavy metals in channels
 	allocate (chhml_conc(4,mhml,mch))
 	allocate (sedhml_conc(4,mhml,mch))
@@ -558,6 +560,8 @@
       allocate (sub_hml_dep(mhml,msub))
       allocate (sub_hml_weth(mhml,msub))
       allocate (sub_hml_agr(mhml,msub))
+      allocate (sub_hml_gw(mhml,msub))
+      
 ! Add variables for heavy metals as well as for pesticides
 	allocate (sub_hml(mhml,msub))
 
@@ -1533,14 +1537,12 @@
 	allocate (hml_rock(mhml,mhru))
       allocate (hml_sed(3,mhml,mhru))
       allocate (hml_surq(mhml,mhru))
+      allocate (hml_gw(mhru))
       allocate (hml_zdb(mhml,mhru))
       !allocate (hml_ph(mhru))
       allocate (hml_agr_total(mhru))
       allocate (hml_agr_frac(mhru))
-
 	allocate (hml_lag(mhml,5,mhru))
-
-
 
 !!    arrays which contain data related to HRU output 
       allocate (hrupsta(mpst,4,mhru))
@@ -1549,28 +1551,28 @@
       allocate (hrupsty(mpst,4,mhru))
       allocate (icols(mhruo))
       allocate (ipdvas(mhruo))
-      !! added by Zhou
+      !! added by Zhou 20200918
       !allocate (hrumono(73,mhru))
-      allocate (hrumono(76,mhru))
+      allocate (hrumono(85,mhru))
       
       !! added by Zhou
       !allocate (hruyro(73,mhru))
-      allocate (hruyro(76,mhru))
+      allocate (hruyro(85,mhru))
       
             !! added by Zhou
       !allocate (hruaao(73,mhru))
-      allocate (hruaao(76,mhru))
+      allocate (hruaao(85,mhru))
       
       allocate (wtrmon(40,mhru))
       allocate (wtryr(40,mhru))
       allocate (wtraa(40,mhru))
       
 !!    arrays which contain metal data related to HRU output 
-      allocate (hruhmla(mhml,9,mhru))	! 1: cation + ligand-bnd in surface runoff
-      allocate (hruhmld(mhml,9,mhru))	! 2:  labile + non-labile in runoff sediment
-      allocate (hruhmlm(mhml,9,mhru))	! 3: all 4 species in runoff, as kg/ha
-      allocate (hruhmly(mhml,9,mhru))	! 4: cation + ligand-bnd in lateral flow 
-									! 5:  labile in runoff sediment
+      allocate (hruhmla(mhml,10,mhru))	! 1: cation + ligand-bnd in surface runoff
+      allocate (hruhmld(mhml,10,mhru))	! 2: labile + non-labile in runoff sediment
+      allocate (hruhmlm(mhml,10,mhru))	! 3: all 4 species in runoff, as kg/ha
+      allocate (hruhmly(mhml,10,mhru))	! 4: cation + ligand-bnd in lateral flow 
+									! 5: labile in runoff sediment
 									! 6: non-labile in runoff sediment
 
 !!    arrays which contain data related to pesticides

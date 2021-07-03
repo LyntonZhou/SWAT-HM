@@ -66,8 +66,8 @@
      &         "NSURQkg/ha"," SOLPkg/ha"," SEDPkg/ha"," LAT Q(mm)",     
      &         "LATNO3kg/h","GWNO3kg/ha","CHOLAmic/L","CBODU mg/L",     
      &         " DOXQ mg/L"," TNO3kg/ha","   HM_SURQ","    HM_LAT",
-     &         "   HM_PERC","  HM_PLANT"," LabHM_ERO","NLabHM_ERO",
-     &         "   HM_ATMO","   HM_WETH","    HM_AGR"/)
+     &         "   HM_PERC","  HM_PLANT","     HM_GW"," LabHM_ERO",
+     &         "NLabHM_ERO","   HM_ATMO","   HM_WETH","    HM_AGR"/)
 
 !!    numbers printed to VB interface subbasin output file 
       icolb = (/35,45,55,65,75,85,95,105,115,125,135,145,               
@@ -98,23 +98,27 @@
      &410,422,434,446,458,470,482,494,506,518,530,542,554,566,578,590,  
      &602,614,626,638,650,662,674,686,698,710,722,734,746,758,770/)
    
-!!    added by Zhou 20150724    
-       hedr_hml(1:36) =(/ 	
-     &         "HMLSOLIN#1kg","HMLLIGIN#1kg","HMLEXCIN#1kg",
-     &         "HMLNLBIN#1kg","HMLSETTL#1kg","HMLRSUSP#1kg",
-     &         " HMLBURY#1kg","HMLDIFFS#1kg","HMLSOLOUT1kg",
-     &		 "HMLSOLOUT1kg","HMLEXCOUT1kg","HMLNLBOUT1kg",
-     &         "HMLSOLIN#2kg","HMLLIGIN#2kg","HMLEXCIN#2kg",
-     &         "HMLNLBIN#2kg","HMLSETTL#2kg","HMLRSUSP#2kg",
-     &         " HMLBURY#2kg","HMLDIFFS#2kg","HMLSOLOUT2kg",
-     &		 "HMLSOLOUT2kg","HMLEXCOUT2kg","HMLNLBOUT2kg",
-     &         "HMLSOLIN#3kg","HMLLIGIN#3kg","HMLEXCIN#3kg",
-     &         "HMLNLBIN#3kg","HMLSETTL#3kg","HMLRSUSP#3kg",
-     &         " HMLBURY#3kg","HMLDIFFS#3kg","HMLSOLOUT3kg",
-     &		 "HMLSOLOUT3kg","HMLEXCOUT3kg","HMLNLBOUT3kg"/)
-	! Append soluble, ligend-bound,  labile and non-labile sorbed metals
-	     
+!!    added by Zhou 20150724 20210408
+       hedr_rch_hml(1:13) =(/ 	
+     &    "     DisHM_INkg","     LabHM_INkg","   NLabHM_INkg",
+     &    "    DisHM_OUTkg","    LabHM_OUTkg","   NLabHM_OUTkg",
+     &    "      HMSETTLkg","     HMRESUSPkg","      HMLBURYkg",
+     &    "      HMLDIFFkg","  SedDisHMkg/m3","  SedLabHMkg/m3",
+     &    " SedNLabHMkg/m3"/)
+       
+       hedr_sub_hml(1:12) =(/ 	
+     &    "    HM_SURQkg","     HM_LATkg","    HM_PERCkg",
+     &    "   HM_PLANTkg","      HM_GWkg","  LabHM_EROkg",
+     &    " NLabHM_EROkg","    HM_ATMOkg","    HM_WETHkg",
+     &    "     HM_AGRkg","     HM_OUTkg","      HM_INkg"/) 
 
+       hedr_hru_hml(1:13) =(/ 
+     &    "   DisHMkg/ha","  LabHMLkg/ha","  NLabHMkg/ha",  
+     &    "    HM_SURQkg","     HM_LATkg","    HM_PERCkg",
+     &    "   HM_PLANTkg","      HM_GWkg","  LabHM_EROkg",
+     &    " NLabHM_EROkg","    HM_ATMOkg","    HM_WETHkg",
+     &    "     HM_AGRkg"/)        
+	     
 !!    column headers for reservoir output file
       hedrsv = (/"    VOLUMEm3","  FLOW_INcms"," FLOW_OUTcms",          
      &           "    PRECIPm3","      EVAPm3","   SEEPAGEm3",          

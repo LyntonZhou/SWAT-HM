@@ -107,7 +107,6 @@
                   if (hml_sed(2,k,j) > xx2) hml_sed(2,k,j) = xx2
 
                   sol_hml_lab(k,j,1) = xx1 - hml_sed(1,k,j)  ! 当侵蚀深度不足sol_z(1)时可以，超过时怎么办？
-                  !sol_hml_nlab(k,j,2) = xx2 - hml_sed(2,k,j)
                   sol_hml_nlab(k,j,1) = xx2 - hml_sed(2,k,j)
 
               end if

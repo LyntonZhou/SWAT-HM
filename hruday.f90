@@ -487,22 +487,7 @@
               &      hruno(j), sb, nmgt(j), iida, hru_km(j),       &
               &      ( sol_hml_sol(1,j,ly), ly = 2, 2 ),           &
               &      ( sol_hml_lig(1,j,ly), ly = 2, 2 ),           &
-              &      ( sol_hml_lab(1,j,ly), ly = 2, 2 ),          &
-              &      ( sol_hml_nlab(1,j,ly), ly = 2, 2 ),          &
-              &       hruhmld(1,1,j),                              &
-              &       hruhmld(1,2,j),                              &
-              &       hruhmld(1,3,j),                              &
-              &       hruhmld(1,4,j),                              &
-              &       hruhmld(1,5,j),                              &
-              &       hruhmld(1,6,j),                              &
-              &       hruhmld(1,7,j),                              &
-              &       hruhmld(1,8,j),                              &         
-              &       hruhmld(1,9,j) 
-      else if (hml_eqn == 1) then
-          write (303,1004) cropname, j, subnum(j),                 &
-              &      hruno(j), sb, nmgt(j), iida, hru_km(j),       &
-              &      ( sol_hml_sol(1,j,ly), ly = 2, 2 ),           &
-              &      ( sol_hml_lab(1,j,ly), ly = 2, 2 ),          &
+              &      ( sol_hml_lab(1,j,ly), ly = 2, 2 ),           &
               &      ( sol_hml_nlab(1,j,ly), ly = 2, 2 ),          &
               &       hruhmld(1,1,j),                              &
               &       hruhmld(1,2,j),                              &
@@ -512,11 +497,26 @@
               &       hruhmld(1,6,j),                              &
               &       hruhmld(1,7,j),                              &
               &       hruhmld(1,8,j),                              &
-              &       hruhmld(1,9,j)                          
+              &       hruhmld(1,9,j),                              &
+              &       hruhmld(1,10,j) 
+      else if (hml_eqn == 1) then
+          write (303,1004) cropname, j, subnum(j),                 &
+              &      hruno(j), sb, nmgt(j), iida, hru_km(j),       &
+              &      ( sol_hml_sol(1,j,ly), ly = 2, 2 ),           &
+              &      ( sol_hml_lab(1,j,ly), ly = 2, 2 ),           &
+              &      ( sol_hml_nlab(1,j,ly), ly = 2, 2 ),          &
+              &       hruhmld(1,1,j),                              &
+              &       hruhmld(1,2,j),                              &
+              &       hruhmld(1,3,j),                              &
+              &       hruhmld(1,4,j),                              &
+              &       hruhmld(1,5,j),                              &
+              &       hruhmld(1,6,j),                              &
+              &       hruhmld(1,7,j),                              &
+              &       hruhmld(1,8,j),                              &
+              &       hruhmld(1,9,j),                              &
+              &       hruhmld(1,10,j)                          
       end if
-          
-     !Added by zhou for outhml.hru
-     !===============================
+
 
       !!add by zhang
       !!output carbon related variables
@@ -585,9 +585,9 @@
 
       return
 
-1000  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,2f10.3,1x,i4)
+1000  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,8f10.3,1x,i4)
 1001  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,e10.5,66f10.3,1x,e10.5,1x,e10.5,8e10.3,2f10.3)
 9000  format (i4,i4,i2,i8,21(f16.3))
 9001  format (i4,i4,i8,48(f16.3))
-1004  format (a4,i5,1x,a5,a4,i5,1x,i4,1x,i4,1x,e10.5,20f10.3)
+1004  format (a4,i5,1x,a9,1x,a5,i5,1x,i4,1x,i4,1x,e10.5,20e13.4)
       end

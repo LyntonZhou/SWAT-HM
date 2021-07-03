@@ -98,7 +98,7 @@
       hru_ra = 0.
       hru_rmx = 0.
       hrupstd = 0.
-	  irr_flag = 0
+      irr_flag = 0
       latno3 = 0.
       latq = 0.
       minpgw = 0.
@@ -257,11 +257,13 @@
       sub_hml_dep = 0.
       sub_hml_weth = 0.
       sub_hml_agr = 0.
+      sub_hml_gw = 0.
       
 
 	hml_sed = 0.
       hml_surq = 0.
 	hml_lat = 0.
+      hml_gw = 0.
 
 	whmldayo = 0.
 	

@@ -310,8 +310,8 @@
        varoute(13,ihout) = chlora(jrch) * rtwtr / 1000.
        varoute(14,ihout) = ammonian(jrch) * rtwtr / 1000.
        varoute(15,ihout) = nitriten(jrch) * rtwtr / 1000.
-       varoute(16,ihout) = rch_cbod(jrch) *  rtwtr/ 1000.
-          varoute(17,ihout) = rch_dox(jrch) *  rtwtr/ 1000.
+       varoute(16,ihout) = rch_cbod(jrch) * rtwtr/ 1000.
+       varoute(17,ihout) = rch_dox(jrch) * rtwtr/ 1000.
 
           !! added by Zhou 20150723
           !! H.metal outflow

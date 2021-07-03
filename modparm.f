@@ -660,7 +660,7 @@
       
 !!    adding qtile to output.hru write 3/2/2010 gsm  increased heds(70) to heds(71)
 !!    increased hedr(42) to hedr(45) for output.rch gsm 10/17/2011
-      character(len=13) :: heds(84),hedb(31),hedr(46),hedrsv(41)
+      character(len=13) :: heds(84),hedb(32),hedr(46),hedrsv(41)
 !!      character(len=13) :: heds(73),hedb(21),hedr(42),hedrsv(41)
       character(len=13) :: hedwtr(40)
 !     character(len=4) :: title(60), cpnm(250)
@@ -936,6 +936,8 @@
       real, dimension (:,:), allocatable :: sub_hml_dep
       real, dimension (:,:), allocatable :: sub_hml_weth
       real, dimension (:,:), allocatable :: sub_hml_agr
+      real, dimension (:,:), allocatable :: sub_hml_gw
+      
 	real, dimension (:,:), allocatable :: sub_hml
 ! Soluable
 	real, dimension (:,:,:), allocatable :: sol_hml_sol	
@@ -980,6 +982,9 @@
 	real, dimension (:), allocatable :: lkhml_mass,lkshml_mass
 	real :: solhmlo,sorhmlo,solhmli,sorhmli
 	real :: percohml
+! metal in groundwater
+	real, dimension (:), allocatable :: gw_sol_hml     
+      real, dimension (:), allocatable :: hml_gw 
 ! Solubility of metal in channel
 	real :: hml_wsol_channel
 	integer :: irthml, n_hml_mx
@@ -1032,7 +1037,9 @@
 ! watershed upward transported h.metal
 	real, dimension (:), allocatable :: shmlup 
 
-      character(len=13) :: hedr_hml(40)
+      character(len=15) :: hedr_rch_hml(40)
+      character(len=13) :: hedr_sub_hml(40)
+      character(len=15) :: hedr_hru_hml(40)
       integer :: pointsourcehmlihout
 
       end module parm

@@ -164,7 +164,7 @@
 	               ikiki=218
            end if
            
-           if(curyr == 5 .and. i == 3) then
+           if(curyr == 2 .and. i == 80) then
 	               ikiki=218
            end if
            

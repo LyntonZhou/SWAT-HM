@@ -169,8 +169,6 @@
       !!by zhang DSSAT tillage  
       !!====================== 
 
-
-
       call varinit
       if (icr(j) <= 0) icr(j) = 1
       
@@ -228,7 +226,10 @@
       call hmlmineweathering
 
       !! calculate the transform between nonlabie and  labile species metal
-      call hmlaging      
+       !call hmlaging 
+      if (hml_eqn == 0) call hmlaging
+      if (hml_eqn == 1) call hmlaging
+           
       
         !! perform management operations
         if (yr_skip(j) == 0) call operatn
@@ -408,6 +409,9 @@
         !! compute nutrient loading in groundwater flow
         call gwnutr
         call gw_no3
+        
+        !! compute metal loading in groundwater flow
+        call hmlgw
 
         !! added by Zhou 20150723
         !! lag Heavy metal in surface runoff
