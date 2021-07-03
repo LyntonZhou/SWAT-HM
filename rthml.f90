@@ -337,13 +337,13 @@
 
         end if
         
-        rch_hml_2=rch_hml_sol(k) + rch_hml_exch(k)
-        rch_hml_sol(k)=rch_hml_2 * x1
-        rch_hml_exch(k)=rch_hml_2 * x2
+        rch_hml_2 = rch_hml_sol(k) + rch_hml_exch(k)
+        rch_hml_sol(k) = rch_hml_2 * x1
+        rch_hml_exch(k) = rch_hml_2 * x2
 
-        sed_hml_2=sed_hml_sol(k)  + sed_hml_exch(k)
-        sed_hml_sol(k)=sed_hml_2 * y1
-        sed_hml_exch(k)=sed_hml_2 * y2
+        sed_hml_2 = sed_hml_sol(k)  + sed_hml_exch(k)
+        sed_hml_sol(k) = sed_hml_2 * y1
+        sed_hml_exch(k) = sed_hml_2 * y2
 
         ! calculate h.metal concentrations at end of day
         chhml_conc(:,k,jrch) = 0.
