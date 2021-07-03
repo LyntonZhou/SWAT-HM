@@ -235,7 +235,7 @@
      &             hmlrchmono(13,1:mhml-1,j)/Real(mdays),               
      &             hmlrchmono(15,1:mhml-1,j)/Real(mdays),               
      &             hmlrchmono(16,1:mhml-1,j)/Real(mdays)
-          else if (hml_eqn == 1) then
+          else if (hml_eqn >= 1) then
           write(307,5003) j, iyr, mo_chk, rch_dakm(j),
      &             hmlrchmono(1,1:mhml-1,j),            
      &             hmlrchmono(3,1:mhml-1,j),               

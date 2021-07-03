@@ -346,7 +346,7 @@
      &      hrumono(84,j),
      &      hrumono(85,j)
           
-      else if (hml_eqn == 1) then
+      else if (hml_eqn >= 1) then
           write (303,1004) cropname, j, subnum(j),                 
      &      hruno(j), sb, nmgt(j), mo_chk, hru_km(j),       
      &      hrumono(72,j)/Real(days),                     

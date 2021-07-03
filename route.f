@@ -219,7 +219,8 @@
       if (ievent == 0) then
         call rtpest
         if (hml_eqn == 0) call rthml
-        if (hml_eqn == 1) call rthml       
+        if (hml_eqn == 1) call rthml   
+        if (hml_eqn == 2) call rthml 
       else
         call rthpest
       end if

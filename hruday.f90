@@ -499,7 +499,7 @@
               &       hruhmld(1,8,j),                              &
               &       hruhmld(1,9,j),                              &
               &       hruhmld(1,10,j) 
-      else if (hml_eqn == 1) then
+      else if (hml_eqn >= 1) then
           write (303,1004) cropname, j, subnum(j),                 &
               &      hruno(j), sb, nmgt(j), iida, hru_km(j),       &
               &      ( sol_hml_sol(1,j,ly), ly = 2, 2 ),           &

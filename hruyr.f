@@ -312,7 +312,7 @@
      &      hruyro(84,j),
      &      hruyro(85,j)     
           
-      else if (hml_eqn == 1) then
+      else if (hml_eqn >= 1) then
           write (303,1004) cropname, j, subnum(j),                 
      &      hruno(j), sb, nmgt(j), iyr, hru_km(j),       
      &      hruyro(72,j)/Real(366 - leapyr),                     

@@ -156,8 +156,8 @@
         if (pointsourcehmlihout>0 ) then
             if(varoute(19+k,pointsourcehmlihout)>0) then
                 rch_hml_sol_in = rch_hml_sol_in + varoute(19+k,pointsourcehmlihout)
-                varoute(19+k,pointsourcehmlihout)=0
-                pointsourcehmlihout=0
+                varoute(19+k,pointsourcehmlihout) = 0
+                pointsourcehmlihout = 0
             end if
         end if
 
@@ -296,7 +296,7 @@
             end if
 
             ! calculate removal of h.metal from active sediment layer by burial
-            bury_exch(k)=sedhml_bry(k,jrch)*sed_hml_exch(k)/sedhml_act(jrch)
+            bury_exch(k) = sedhml_bry(k,jrch)*sed_hml_exch(k)/sedhml_act(jrch)
             if (bury_exch(k) > sed_hml_exch(k)) then
                 bury_exch(k) = sed_hml_exch(k)
                 sed_hml_exch(k) = 0.
@@ -304,7 +304,7 @@
                 sed_hml_exch(k) = sed_hml_exch(k) - bury_exch(k)
             end if
 
-            bury_nlab(k)=sedhml_bry(k,jrch)*sed_hml_nlab(k)/sedhml_act(jrch)
+            bury_nlab(k) = sedhml_bry(k,jrch)*sed_hml_nlab(k)/sedhml_act(jrch)
             if (bury_nlab(k) > sed_hml_nlab(k)) then
                 bury_nlab(k) = sed_hml_nlab(k)
                 sed_hml_nlab(k) = 0.

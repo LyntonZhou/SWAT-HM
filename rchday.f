@@ -260,7 +260,7 @@
      &             hmlrchdy(14,1:mhml-1,j),
      &             hmlrchdy(15,1:mhml-1,j),               
      &             hmlrchdy(16,1:mhml-1,j)
-          else if (hml_eqn == 1) then
+          else if (hml_eqn >= 1) then
 		   write(307,5003) j, iyr, iida, rch_dakm(j),
      &             hmlrchdy(1,1:mhml-1,j),             
      &             hmlrchdy(3,1:mhml-1,j),               

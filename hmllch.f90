@@ -113,10 +113,14 @@
                   k = n_hml_no(k_i)	 ! ID No. of metal in db
                   !! write(*,*) hmlname(k) ! For test
                   !! Sequence No. of input metal, in fact this sequence number is useless
-                  kk = i_hml_no(k)     
+                  kk = i_hml_no(k) 
                   
-                  kp = hmlkd(sol_ph(ly,j), sol_cbn(ly,j),ly) / 1000.
-                  kp = (1 + sol_hmlkp(k,1)) * kp
+                  if (hml_eqn == 2) then
+                      kp = sol_hmlkp(k,1)
+                  else
+                      kp = hmlkd(sol_ph(ly,j), sol_cbn(ly,j),ly) / 1000.
+                      kp = (1 + sol_hmlkp(k,1)) * kp
+                  endif
 
                   if (kk > 0) then
                       qsurf = 0.

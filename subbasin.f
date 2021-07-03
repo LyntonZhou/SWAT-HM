@@ -337,6 +337,7 @@
         !! compute h.metal leaching in soil
 	  if (hml_eqn == 0) call hmllch
         if (hml_eqn == 1) call hmllch
+        if (hml_eqn == 2) call hmllch
         
        !! metal uptake by plant
        call hmlpu

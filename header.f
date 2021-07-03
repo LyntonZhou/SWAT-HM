@@ -100,7 +100,7 @@
    
 !!    added by Zhou 20150724 20210408
        hedr_rch_hml(1:13) =(/ 	
-     &    "     DisHM_INkg","     LabHM_INkg","   NLabHM_INkg",
+     &    "     DisHM_INkg","     LabHM_INkg","    NLabHM_INkg",
      &    "    DisHM_OUTkg","    LabHM_OUTkg","   NLabHM_OUTkg",
      &    "      HMSETTLkg","     HMRESUSPkg","      HMLBURYkg",
      &    "      HMLDIFFkg","  SedDisHMkg/m3","  SedLabHMkg/m3",

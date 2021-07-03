@@ -238,7 +238,7 @@
      &             hmlrchyro(14,1:mhml-1,j)/Real(idlast),
      &             hmlrchyro(15,1:mhml-1,j)/Real(idlast),               
      &             hmlrchyro(16,1:mhml-1,j)/Real(idlast)
-          else if (hml_eqn == 1) then
+          else if (hml_eqn >= 1) then
           write(307,5003) j, iyr, iyr, rch_dakm(j),
      &             hmlrchyro(1,1:mhml-1,j),          
      &             hmlrchyro(3,1:mhml-1,j),               
