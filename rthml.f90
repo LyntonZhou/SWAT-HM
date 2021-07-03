@@ -208,8 +208,8 @@
 
             if (sedrchin > sedrchout) then
                 ! settling
-                setlhml_exch(k)=(sedrchin-sedrchout)/sedrchin*rch_hml_exch(k)
-                setlhml_nlab(k)=(sedrchin-sedrchout)/sedrchin*rch_hml_nlab(k)
+                setlhml_exch(k) = (sedrchin-sedrchout)/sedrchin*rch_hml_exch(k)
+                setlhml_nlab(k) = (sedrchin-sedrchout)/sedrchin*rch_hml_nlab(k)
                 ! check settling veolocity
                 !stl = (sedrchin-sedrchout)/sedrchin*depth/tday
                 !if (stl > 2.5) then ! 10 m/s
@@ -220,8 +220,8 @@
                 !endif
             else
                 ! resuspension
-                rsushml_exch(k)=(sedrchout-sedrchin)/bedmass*sed_hml_exch(k)
-                rsushml_nlab(k)=(sedrchout-sedrchin)/bedmass*sed_hml_nlab(k)
+                rsushml_exch(k) = (sedrchout-sedrchin)/bedmass*sed_hml_exch(k)
+                rsushml_nlab(k) = (sedrchout-sedrchin)/bedmass*sed_hml_nlab(k)
                  ! check resuspension veolocity
                 rsp = (sedrchin-sedrchout)/bedmass*sedhml_act(jrch)/tday
                 if (rsp > 50) then
